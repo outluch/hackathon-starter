@@ -101,14 +101,14 @@ gulp.task('watch', () => {
   gulp.watch(['public_src/js/**/*.js'], ['js_app']);
   gulp.watch(['public_src/components/**/*.html'], ['templates']);
   gulp.watch(['controllers/**/*.js', 'config/**/*.js', 'views/**/*.*', 'app.js'], ['reload']);
-  // gulp.watch(['controllers/**/*.js', 'config/**/*.js', 'views/**/*'], (e) => {
-  //   gulp.run('start_app');
-  //   gulp.src(e.path)
-  //     // .pipe(p.wait(3000))
-  //     .pipe(p.livereload({
-  //       start: true
-  //     }));
-  // });
+  gulp.watch(['controllers/**/*.js', 'config/**/*.js', 'app.js'], (e) => {
+    gulp.run('start_app');
+    gulp.src(e.path)
+      // .pipe(p.wait(3000))
+      .pipe(p.livereload({
+        start: true
+      }));
+  });
 });
 
 gulp.task('default', [
