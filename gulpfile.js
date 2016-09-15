@@ -6,7 +6,7 @@ let children = [];
 let node = 0;
 
 gulp.task('copy', () => {
-  gulp.src('public_src/fonts/*').pipe(gulp.dest('public/fonts'));
+  gulp.src('public_src/public/**/*').pipe(gulp.dest('public'));
 });
 
 gulp.task('imagemin', () => {
